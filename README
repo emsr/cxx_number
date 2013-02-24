@@ -1,0 +1,3 @@
+This class is intended to be a number that keeps track of error propagation.
+
+It should be a drop in replacement for basic numbers float,double, long double.

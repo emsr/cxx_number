@@ -1,0 +1,27 @@
+
+#include <numeric_limits>
+#include <cmath>
+
+template<typename _Tp>
+  class number
+  {
+  public:
+
+    template<typename _Up>
+      number(_Up __val)
+      : value{__val},
+        error{std::numeric_limits<_Up>::epsilon()}
+      { }
+
+    template<typename _Up>
+      number(_Up __val, _Up __err)
+      : value{__val},
+        error{std::abs(__err)}
+      { }
+
+    _Tp operator _Tp()
+    { return value; }
+
+    _Tp value;
+    _Tp error;
+  };
